@@ -13,4 +13,13 @@ export default createGlobalStyle`
         color: #fff;
     }
     
+    .ellipsis {
+        color: ${props => props.theme.colors.paleBlue};
+        vertical-align: middle;
+        transition: 200ms;
+
+        &:hover{
+            color: white;
+        }
+    }
 `;

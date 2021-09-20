@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
 export const Card = styled.div`
-    width: 345px;
-    height: 400px;
-    background-color: ${props => props.theme.colors.darkBlue} ;
+    width: 250px;
+    height: 245px;
+    border-radius: 25px;
+    background-color: ${props => props.theme.colors.darkBlue};
+    display: flex;
+    align-items: flex-end;
 `;

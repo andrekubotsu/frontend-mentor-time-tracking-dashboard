@@ -9,6 +9,7 @@ const theme = {
         softOrangeSelfcare: 'hsl(43, 84%, 65%)',
         veryDarkBlue: 'hsl(226, 43%, 10%)',
         darkBlue: 'hsl(235, 46%, 20%)',
+        darkBlueHover: 'hsl(235, 46%, 33%)',
         desaturatedBlue: 'hsl(235, 45%, 61%)',
         paleBlue: 'hsl(236, 100%, 87%)',
     },
