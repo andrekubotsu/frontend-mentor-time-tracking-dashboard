@@ -1,10 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as Cards from './style';
 import { IoEllipsisHorizontal } from 'react-icons/io5'; 
 import { IconContext } from 'react-icons/lib';
 import profileImage from '../../images/image-jeremy.png';
+import data from '../../data/data.json';
 
 const Main = () => {
+    // const isActiveDaily = false;
+    // const isActiveWeekly = false;
+    // const isActiveMonthly = false;
+    const userData = [...data];
+
+    const initialData = () => {
+        let initialData = [];
+        userData.forEach(category => initialData.push(category.timeframes.daily));
+        initialData.push('Day');
+        return initialData
+    }
+
+    const [displayData, setDisplayData] = useState(initialData);
+
+    function loadDailyData(){
+        let daily = [];
+        userData.forEach(category => daily.push(category.timeframes.daily));
+        daily.push('Day');      
+        return setDisplayData([...daily]);
+    }
+
+    function loadWeeklyData(){
+        let weekly = [];
+        userData.forEach(category => weekly.push(category.timeframes["weekly"]));
+        weekly.push('Week');      
+        return setDisplayData([...weekly]);
+    }
+
+    function loadMontlyData(){
+        let monthly = [];
+        userData.forEach(category => monthly.push(category.timeframes["monthly"]));  
+        monthly.push('Month');    
+        return setDisplayData([...monthly]);
+    }
+  
+
     return (
         <IconContext.Provider value={{className: 'ellipsis'}}>
         <Cards.Wrapper>
@@ -15,51 +52,51 @@ const Main = () => {
                     <p className="name">Jeremy Robson</p>
                 </Cards.ProfileData>
                 <Cards.ProfileSchedule>
-                    <p><a href="http://">Daily</a></p>
-                    <p><a href="http://">Weekly</a></p>
-                    <p><a href="http://">Monthly</a></p>
+                    <Cards.ScheduleLink onClick={loadDailyData}  >Daily</Cards.ScheduleLink>
+                    <Cards.ScheduleLink onClick={loadWeeklyData} >Weekly</Cards.ScheduleLink>
+                    <Cards.ScheduleLink onClick={loadMontlyData} >Monthly</Cards.ScheduleLink>
                 </Cards.ProfileSchedule>
             </Cards.ProfileCard>
             <Cards.CardWork>
                 <Cards.InnerCard>
-                    <div className="title"><span>Work</span><span><a href="http://"><IoEllipsisHorizontal size={20} /></a></span></div>
-                    <p className="hours">32hrs</p>
-                    <p className="schedule">Last Week - 36hrs</p>
+                    <div className="title"><span>{userData[0].title}</span><span><a href="http://"><IoEllipsisHorizontal size={20} /></a></span></div>
+                    <p className="hours">{displayData[0].current}hrs</p>
+                    <p className="schedule">Last {displayData[6]} - {displayData[0]['previous']}hrs</p>
                 </Cards.InnerCard>
             </Cards.CardWork>
             <Cards.CardPlay>
                 <Cards.InnerCard>
-                    <div className="title"><span>Play</span><span><a href="http://"><IoEllipsisHorizontal size={20} /></a></span></div>
-                    <p className="hours">10hrs</p>
-                    <p className="schedule">Last Week - 8hrs</p>
+                    <div className="title"><span>{userData[1].title}</span><span><a href="http://"><IoEllipsisHorizontal size={20} /></a></span></div>
+                    <p className="hours">{displayData[1]['current']}hrs</p>
+                    <p className="schedule">Last {displayData[6]} - {displayData[1]['previous']}hrs</p>
                 </Cards.InnerCard>
             </Cards.CardPlay>
             <Cards.CardStudy> 
                 <Cards.InnerCard>
-                    <div className="title"><span>Study</span><span><a href="http://"><IoEllipsisHorizontal size={20} /></a></span></div>
-                    <p className="hours">4hrs</p>
-                    <p className="schedule">Last Week - 7hrs</p>
+                    <div className="title"><span>{userData[2].title}</span><span><a href="http://"><IoEllipsisHorizontal size={20} /></a></span></div>
+                    <p className="hours">{displayData[2]['current']}hrs</p>
+                    <p className="schedule">Last {displayData[6]} - {displayData[2]['previous']}hrs</p>
                 </Cards.InnerCard>
             </Cards.CardStudy>
             <Cards.CardExercise>
                 <Cards.InnerCard>
-                    <div className="title"><span>Exercise</span><span><a href="http://"><IoEllipsisHorizontal size={20} /></a></span></div>
-                    <p className="hours">4hrs</p>
-                    <p className="schedule">Last Week - 5hrs</p>
+                    <div className="title"><span>{userData[3].title}</span><span><a href="http://"><IoEllipsisHorizontal size={20} /></a></span></div>
+                    <p className="hours">{displayData[3]['current']}hrs</p>
+                    <p className="schedule">Last {displayData[6]} - {displayData[3]['previous']}hrs</p>
                 </Cards.InnerCard>
             </Cards.CardExercise>
             <Cards.CardSocial>
                 <Cards.InnerCard>
-                    <div className="title"><span>Social</span><span><a href="http://"><IoEllipsisHorizontal size={20} /></a></span></div>
-                    <p className="hours">32hrs</p>
-                    <p className="schedule">Last Week - 10hrs</p>
+                    <div className="title"><span>{userData[4].title}</span><span><a href="http://"><IoEllipsisHorizontal size={20} /></a></span></div>
+                    <p className="hours">{displayData[4]['current']}hrs</p>
+                    <p className="schedule">Last {displayData[6]} - {displayData[4]['previous']}hrs</p>
                 </Cards.InnerCard>
             </Cards.CardSocial>
             <Cards.CardSelfCare>
                 <Cards.InnerCard>
-                    <div className="title"><span>Self Care</span><span><a href="http://"><IoEllipsisHorizontal size={20} /></a></span></div>
-                    <p className="hours">2hrs</p>
-                    <p className="schedule">Last Week - 2hrs</p>
+                    <div className="title"><span>{userData[5].title}</span><span><a href="http://"><IoEllipsisHorizontal size={20} /></a></span></div>
+                    <p className="hours">{displayData[5]['current']}hrs</p>
+                    <p className="schedule">Last {displayData[6]} - {displayData[5]['previous']}hrs</p>
                 </Cards.InnerCard>
             </Cards.CardSelfCare>
         </Cards.Wrapper>

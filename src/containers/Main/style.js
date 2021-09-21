@@ -10,7 +10,6 @@ import { Card } from '../../components/cards'
 export const Wrapper =  styled.div`
     width: 1100px;
     height: 520px;
-    //background-color: ${props => props.theme.colors.lightRedStudy} ;
     display: grid;
     gap: 25px 25px;
     grid-template-columns: 1fr 1fr 1fr;
@@ -25,7 +24,7 @@ export const ProfileCard = styled.div`
     grid-area: profile;
     width: 250px;
     height: 520px;
-    background-color: ${props => props.theme.colors.darkBlue};
+    background-color: var(--darkBlue);
     border-radius: 25px;
 `;
 
@@ -63,23 +62,17 @@ export const ProfileSchedule = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+`;
 
-    p {
-        font-size: 1.1em;
-    }
+export const ScheduleLink = styled.p`
+    font-size: 1.1em;
+    text-decoration: none;
+    color: ${props => props.theme.colors.desaturatedBlue};
+    cursor: pointer;
+    transition: 200ms;
 
-    a {
-        text-decoration: none;
-        color:  ${props => props.theme.colors.desaturatedBlue};
-        transition: 200ms;
-
-        &:hover {
-            color: white;
-        }
-
-        &:active{
-            color: white;
-        }
+    &:hover {
+        color: white;
     }
 `;
 
