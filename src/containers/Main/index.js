@@ -62,13 +62,13 @@ const Main = () => {
 
     return (
         <IconContext.Provider value={{className: 'ellipsis'}}>
-        <Cards.Wrapper>
+        <Cards.Wrapper role="main">
             <Cards.ProfileCard>
                 <Cards.ProfileData>
-                    <Cards.ProfileImage src={profileImage} />
+                    <Cards.ProfileImage src={profileImage} alt="Profile Image" />
                     <div className="mobileDisplay">
                         <p className="reportfor">Report for</p>
-                        <p className="name">Jeremy Robson</p>
+                        <h1 className="name">Jeremy Robson</h1>
                     </div>
                 </Cards.ProfileData>
                 <Cards.ProfileSchedule>
@@ -79,42 +79,42 @@ const Main = () => {
             </Cards.ProfileCard>
             <Cards.CardWork>
                 <Cards.InnerCard>
-                    <div className="title"><span>{userData[0].title}</span><span><a href="http://"><IoEllipsisHorizontal size={20} /></a></span></div>
+                    <div className="title"><span>{userData[0].title}</span><span><a href="http://" aria-label="More"><IoEllipsisHorizontal size={20} /></a></span></div>
                     <div className="hoursDisplay"><p className="hours">{displayData[0].current}hrs</p>
                     <p className="schedule">{displayData[6]} - {displayData[0]['previous']}hrs</p></div>
                 </Cards.InnerCard>
             </Cards.CardWork>
             <Cards.CardPlay>
                 <Cards.InnerCard>
-                    <div className="title"><span>{userData[1].title}</span><span><a href="http://"><IoEllipsisHorizontal size={20} /></a></span></div>
+                    <div className="title"><span>{userData[1].title}</span><span><a href="http://" aria-label="More"><IoEllipsisHorizontal size={20} /></a></span></div>
                     <div className="hoursDisplay"><p className="hours">{displayData[1]['current']}hrs</p>
                     <p className="schedule">{displayData[6]} - {displayData[1]['previous']}hrs</p></div>
                 </Cards.InnerCard>
             </Cards.CardPlay>
             <Cards.CardStudy> 
                 <Cards.InnerCard>
-                    <div className="title"><span>{userData[2].title}</span><span><a href="http://"><IoEllipsisHorizontal size={20} /></a></span></div>
+                    <div className="title"><span>{userData[2].title}</span><span><a href="http://" aria-label="More"><IoEllipsisHorizontal size={20} /></a></span></div>
                     <div className="hoursDisplay"><p className="hours">{displayData[2]['current']}hrs</p>
                     <p className="schedule">{displayData[6]} - {displayData[2]['previous']}hrs</p></div>
                 </Cards.InnerCard>
             </Cards.CardStudy>
             <Cards.CardExercise>
                 <Cards.InnerCard>
-                    <div className="title"><span>{userData[3].title}</span><span><a href="http://"><IoEllipsisHorizontal size={20} /></a></span></div>
+                    <div className="title"><span>{userData[3].title}</span><span><a href="http://" aria-label="More"><IoEllipsisHorizontal size={20} /></a></span></div>
                     <div className="hoursDisplay"><p className="hours">{displayData[3]['current']}hrs</p>
                     <p className="schedule">{displayData[6]} - {displayData[3]['previous']}hrs</p></div>
                 </Cards.InnerCard>
             </Cards.CardExercise>
             <Cards.CardSocial>
                 <Cards.InnerCard>
-                    <div className="title"><span>{userData[4].title}</span><span><a href="http://"><IoEllipsisHorizontal size={20} /></a></span></div>
+                    <div className="title"><span>{userData[4].title}</span><span><a href="http://" aria-label="More"><IoEllipsisHorizontal size={20} /></a></span></div>
                     <div className="hoursDisplay"><p className="hours">{displayData[4]['current']}hrs</p>
                     <p className="schedule">{displayData[6]} - {displayData[4]['previous']}hrs</p></div>
                 </Cards.InnerCard>
             </Cards.CardSocial>
             <Cards.CardSelfCare>
                 <Cards.InnerCard>
-                    <div className="title"><span>{userData[5].title}</span><span><a href="http://"><IoEllipsisHorizontal size={20} /></a></span></div>
+                    <div className="title"><span>{userData[5].title}</span><span><a href="http://" aria-label="More"><IoEllipsisHorizontal size={20} /></a></span></div>
                     <div className="hoursDisplay"><p className="hours">{displayData[5]['current']}hrs</p>
                     <p className="schedule">{displayData[6]} - {displayData[5]['previous']}hrs</p></div>
                 </Cards.InnerCard>

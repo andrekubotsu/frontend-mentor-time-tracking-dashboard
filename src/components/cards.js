@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Card = styled.div`
     width: 250px;
-    height: 245px;
-    border-radius: 25px;
+    height: 250px;
+    border-radius: 20px;
     background-color: ${props => props.theme.colors.darkBlue};
     display: flex;
     flex-direction: column-reverse;

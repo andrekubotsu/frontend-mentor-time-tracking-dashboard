@@ -42,7 +42,7 @@ export const ProfileCard = styled.div`
     width: 250px;
     height: 520px;
     background-color: ${props => props.theme.colors.darkBlue};
-    border-radius: 25px;
+    border-radius: 20px;
 
     @media screen and (max-width: 1120px){
         width: 320px;
@@ -51,17 +51,17 @@ export const ProfileCard = styled.div`
 `;
 
 export const ProfileData = styled.div`
-    width: 190px;
-    height: 290px;
+    width: 180px;
+    height: 280px;
     background-color: ${props => props.theme.colors.blue};
-    border-radius: 25px;
-    padding: 30px;
+    border-radius: 20px;
+    padding: 35px;
 
     .reportfor {
         font-size: 0.85em;
         color: ${props => props.theme.colors.paleBlue};
         line-height: 1.5em;
-        margin-top:30px;
+        margin-top:35px;
     }
 
     .name {
@@ -98,8 +98,8 @@ export const ProfileData = styled.div`
 export const ProfileImage = styled.img`
     border: 3px solid white;
     border-radius: 180px;
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
 
     @media screen and (max-width: 1120px){
         width: 60px;
@@ -175,8 +175,8 @@ export const CardSelfCare = styled(Card)`
 
 export const InnerCard = styled.div`
     width: 190px;
-    height: 160px;
-    border-radius: 25px;
+    height: 165px;
+    border-radius: 20px;
     background-color: ${props => props.theme.colors.darkBlue}; 
     padding: 20px 30px;
     display: flex;
@@ -197,12 +197,12 @@ export const InnerCard = styled.div`
     }
 
     .hours {
-        font-size: 3em;
+        font-size: 3.5em;
         font-weight: 300;
     }
 
     .schedule {
-        font-size: 0.85em;
+        font-size: 1em;
         color: ${props => props.theme.colors.paleBlue};
     }
 
