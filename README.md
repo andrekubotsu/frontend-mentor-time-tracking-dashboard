@@ -25,6 +25,8 @@ Users should be able to:
 
 ![](./screenshot.gif)
 
+PS.: I didn't notice, but the gif is not showing the responsive layout I made.
+
 ### Built with
 
 - Semantic HTML5 markup
