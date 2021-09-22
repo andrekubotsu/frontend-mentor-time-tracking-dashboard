@@ -6,5 +6,11 @@ export const Card = styled.div`
     border-radius: 25px;
     background-color: ${props => props.theme.colors.darkBlue};
     display: flex;
-    align-items: flex-end;
+    flex-direction: column-reverse;
+    align-items: baseline;
+
+    @media screen and (max-width: 1120px){
+        width: 320px;
+        height: 160px;
+    }
 `;

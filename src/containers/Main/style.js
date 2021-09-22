@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import iconWork from '../../images/icon-work.svg'
 import iconExercise from '../../images/icon-exercise.svg';
 import iconPlay from '../../images/icon-play.svg';
@@ -18,14 +18,36 @@ export const Wrapper =  styled.div`
         "profile cardWork cardPlay cardStudy"
         "profile cardExercise cardSocial cardSelfCare"
     ;
+
+    @media screen and (max-width: 1120px){
+        width: 100%;
+        height: 1300px;
+        gap: 20px 20px;
+        grid-template-columns: 1fr;
+        grid-template-rows:  1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            "profile" 
+            "cardWork" 
+            "cardPlay" 
+            "cardStudy"
+            "cardExercise" 
+            "cardSocial" 
+            "cardSelfCare"
+        ;
+    }
 `;
 
 export const ProfileCard = styled.div`
     grid-area: profile;
     width: 250px;
     height: 520px;
-    background-color: var(--darkBlue);
+    background-color: ${props => props.theme.colors.darkBlue};
     border-radius: 25px;
+
+    @media screen and (max-width: 1120px){
+        width: 320px;
+        height: 200px;
+    }
 `;
 
 export const ProfileData = styled.div`
@@ -47,12 +69,42 @@ export const ProfileData = styled.div`
         font-weight: 300;
         line-height: 1.1em;
     }
+
+    @media screen and (max-width: 1120px){
+        width: 260px;
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .mobileDisplay {
+            margin-left:20px;
+        }
+
+        .reportfor {
+            font-size: 0.85em;
+            line-height: 2em;
+            margin-top:0px;
+        }
+
+        .name {
+            font-size: 1.5em;
+            font-weight: 300;
+            line-height: 1.1em;
+        }
+    }
 `;
 
 export const ProfileImage = styled.img`
     border: 3px solid white;
     border-radius: 180px;
     width: 80px;
+    height: 80px;
+
+    @media screen and (max-width: 1120px){
+        width: 60px;
+        height: 60px;
+    }
 `;
 
 export const ProfileSchedule = styled.div`
@@ -62,12 +114,21 @@ export const ProfileSchedule = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+
+    @media screen and (max-width: 1120px){
+        width: 260px;
+        height: 60px;
+        flex-direction: row;
+        align-items: center;
+        justify-content:space-between;
+        padding: 0px 30px 0px 30px;
+    }
 `;
 
 export const ScheduleLink = styled.p`
     font-size: 1.1em;
     text-decoration: none;
-    color: ${props => props.theme.colors.desaturatedBlue};
+    ${props => props.isActive ? css`color: white` : css`color: ${props => props.theme.colors.desaturatedBlue}`};
     cursor: pointer;
     transition: 200ms;
 
@@ -135,7 +196,6 @@ export const InnerCard = styled.div`
         font-size: 1em;
     }
 
-
     .hours {
         font-size: 3em;
         font-weight: 300;
@@ -146,8 +206,53 @@ export const InnerCard = styled.div`
         color: ${props => props.theme.colors.paleBlue};
     }
 
+    .hoursDisplay {
+        p{
+            margin-top: 10px;
+        }
+    }
+
     &:hover {
         background-color: ${props => props.theme.colors.darkBlueHover};
         cursor: pointer;
+    }
+
+    @media screen and (max-width: 1120px){
+        width: 260px;
+        height: 80px;
+        padding: 20px 30px 20px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        .title{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        span {
+            font-weight:500;
+            font-size: 1em;
+        }
+
+        .hours {
+            font-size: 2em;
+            font-weight: 300;
+        }
+
+        .schedule {
+            font-size: 0.85em;
+            color: ${props => props.theme.colors.paleBlue};
+        }
+
+        .hoursDisplay {
+            margin-top: 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 `;
